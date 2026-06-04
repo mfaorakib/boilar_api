@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"D:\\\\Boilar\\\\Archive\" -Force)",
+      "Bash(Select-Object -Property Name, PSIsContainer)",
+      "Bash(Format-Table -AutoSize)",
+      "Bash(Get-Content *)",
+      "Bash(php --version)",
+      "Bash(composer --version)",
+      "Bash(php -r \"echo json_decode\\(file_get_contents\\('vendor/laravel/framework/composer.json'\\), true\\)['version'] ?? 'not found';\")",
+      "Bash(php artisan *)",
+      "Bash(powershell -Command \"Get-Content composer.lock | Select-String -Pattern '\\\\\"laravel/framework\\\\\"' -Context 0,5\")",
+      "Bash(dir D:\\\\Boilar\\\\Archive *)",
+      "Bash(composer install *)",
+      "Bash(dir)",
+      "Bash(dir \"D:\\\\Boilar\\\\Archive\\\\vendor\")",
+      "Bash(dir \"D:\\\\Boilar\\\\Archive\\\\vendor\\\\autoload.php\")",
+      "Bash(dir \"D:\\\\Boilar\\\\Archive\\\\vendor\\\\composer\")",
+      "Bash(composer dump-autoload *)",
+      "Bash(dir \"D:\\\\Boilar\\\\Archive\\\\vendor\\\\composer\\\\autoload_real.php\")",
+      "Bash(php -r ' *)",
+      "Bash(grep -n 'protected $laravel\\\\|getLaravel\\\\|setLaravel\\\\|resolvingCommands\\\\|commands\\\\s*=' D:/Boilar/Archive/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php)",
+      "Bash(composer show *)",
+      "Bash(composer update *)",
+      "Bash(composer require *)",
+      "Bash(composer info *)",
+      "PowerShell(mysql *)",
+      "PowerShell(Head *)",
+      "Bash(mysql -u root --force sparkbringit-db)",
+      "Bash(mysql *)",
+      "PowerShell(Start-Sleep -Seconds 3; Invoke-WebRequest -Uri \"http://127.0.0.1:8000/up\" -UseBasicParsing 2>&1 | Select-Object StatusCode, Content)",
+      "Bash(curl *)"
+    ]
+  }
+}
