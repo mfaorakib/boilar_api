@@ -112,7 +112,12 @@ class MenuController extends Controller
             } else {
                 $menu->update($request->except('children'));
                 $menu->roles()->sync($roles);
-                if ($request->filled('link')) {
+                // Only propagate role access to the parent when the menu
+                // actually has a parent (i.e. it is a child node). Root nodes
+                // have no parent — calling $menu->parent->roles() on a root
+                // node returns null and throws a fatal error, rolling back the
+                // entire transaction and silently discarding the saved data.
+                if ($request->filled('link') && $menu->parent !== null) {
                     $menu->parent->roles()->syncWithoutDetaching($roles);
                 }
                 // commit database
